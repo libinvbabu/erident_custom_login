@@ -63,10 +63,11 @@ function right_admin_footer_text_output($er_right) {
 }
 
 /* Adding media uploader */
-add_action ( 'admin_enqueue_scripts', function () {
-    if (is_admin ())
+function er_admin_enqueue_script(){
+if (is_admin ())
         wp_enqueue_media ();
-} );
+}
+add_action('admin_enqueue_scripts', 'er_admin_enqueue_script');
 
 /* Login Logo */
 function er_login_logo() {
